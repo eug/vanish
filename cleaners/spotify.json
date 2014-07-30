@@ -1,0 +1,15 @@
+{
+  "Spotify" : {
+    "Browser local storage" : {
+      "active": false,
+      "path"  : "~/.cache/spotify/Browser/Local Storage",
+      "description": "Some description"
+    },
+
+    "Storage" : {
+      "active": false,
+      "path"  : "~/.cache/spotify/Storage/[0-9a-z]{2,5}",
+      "description": "Some description"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "Awesome" : {
+    "History" : {
+      "active": true,
+      "path"  : "~/.cache/awesome/history",
+      "description": "Some description"
+    }
+  }
+}

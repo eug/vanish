@@ -1,0 +1,63 @@
+{
+  "Firefox" : {
+    "Cache" : {
+      "active": false,
+      "path"  : ["/path/to/dir"],
+      "description": ""
+    },
+
+    "Cookies" : {
+      "active": false,
+      "path"  : ["/path/to/dir"],
+      "description": ""
+    },
+
+    "DOM storage" : {
+      "active": false,
+      "path"  : ["/path/to/dir"],
+      "description": ""
+    },
+
+    "Download history" : {
+      "active": false,
+      "path"  : ["/path/to/dir"],
+      "description": ""
+    },
+
+    "Form history" : {
+      "active": false,
+      "path"  : ["/path/to/dir"],
+      "description": ""
+    },
+
+    "Passwords" : {
+      "active": false,
+      "path"  : ["/path/to/dir"],
+      "description": ""
+    },
+
+    "Places" : {
+      "active": false,
+      "path"  : ["/path/to/dir"],
+      "description": ""
+    },
+
+    "Session restore" : {
+      "active": false,
+      "path"  : ["/path/to/dir"],
+      "description": ""
+    },
+
+    "URL history" : {
+      "active": false,
+      "path"  : ["/path/to/dir"],
+      "description": ""
+    },
+
+    "Crash reports" : {
+      "active": false,
+      "path"  : ["/path/to/file.log"],
+      "description": ""
+    }
+  }
+}

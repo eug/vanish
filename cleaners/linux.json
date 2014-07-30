@@ -1,0 +1,15 @@
+{
+  "Linux" : {
+    "Temporary files" : {
+      "active": false,
+      "path"  : "/tmp",
+      "description": "Clean all temporary files"
+    },
+
+    "Bash history" : {
+      "active": true,
+      "path"  : "~/.bash_history",
+      "description": "Clear bash history"
+    }
+  }
+}

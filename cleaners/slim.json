@@ -1,0 +1,9 @@
+{
+  "Slim" : {
+    "Log entries" : {
+      "active": true,
+      "path"  : "/var/log/slim.log",
+      "description": ""
+    }
+  }
+}

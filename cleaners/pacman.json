@@ -1,0 +1,15 @@
+{
+  "Pacman" : {
+    "Log entries" : {
+      "active": true,
+      "path"  : "/var/log/pacman.log",
+      "description": ""
+    },
+
+    "Cache packages" : {
+      "active": false,
+      "path"  : "/var/cache/pacman/pkg",
+      "description": ""
+    }
+  }
+}

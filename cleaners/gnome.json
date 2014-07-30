@@ -1,0 +1,21 @@
+{
+  "Gnome" : {
+    "Thumbnail" : {
+      "active": false,
+      "path"  : "~/.cache/thumbnails",
+      "description": "Some description"
+    },
+
+    "Tracker" : {
+      "active": false,
+      "path"  : "~/.cache/tracker",
+      "description": "Some description"
+    },    
+
+    "Trash" : {
+      "active": true,
+      "path"  : "~/.local/share/Trash",
+      "description": ""
+    }
+  }
+}
