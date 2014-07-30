@@ -1,0 +1,11 @@
+{
+
+	"Program" : {
+		"Temp Name" : {
+			"active": false,
+			"path"  : "/path/to/dir",
+			"description": "Some description"
+		}
+	}
+
+}
