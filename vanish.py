@@ -13,22 +13,22 @@ def is_valid_json(json):
 
   isvalid = True
 
-  for program, value in json.items():
+  for program, option in json.items():
 
     if not program:
-      print("[ERROR] Missing program name for: " + value)
+      print("[ERROR] Missing program name for: " + option)
 
-    for name in value:
+    for name in option:
       
-      if not 'active' in value[name]:
+      if not 'active' in option[name]:
         isvalid = False
         print("[ERROR] Missing 'active' attribute for '" + name + "'")
 
-      if not 'path' in value[name]:
+      if not 'path' in option[name]:
         isvalid = False
         print("[ERROR] Missing 'path' attribute for '" + name + "'")
 
-      if not 'description' in value[name]:
+      if not 'description' in option[name]:
         print("[WARNING] Missing 'description' attribute for '" + name + "'")
 
   return isvalid
@@ -74,7 +74,7 @@ def do_clean(json):
       for path in paths:
         for f in glob(path):
           print("Removing '" + f + "'")
-          # rm_content(f)
+          rm_content(f)
 
 
 if __name__ == '__main__':
