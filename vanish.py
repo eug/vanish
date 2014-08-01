@@ -9,6 +9,10 @@ from os import remove, listdir
 from os.path import isfile, join, expandvars, expanduser
 
 
+_IGNORE_JSON = 'ignore.json'
+_CLEANERS_DIR = 'cleaners'
+
+
 def is_valid_json(json):
     """ Checks if the json file is correct """
 
@@ -79,12 +83,27 @@ def do_clean(json):
                     rm_content(f)
 
 
-if __name__ == '__main__':    
+def remove_ignored_cleaners(cleaners):
+    cleaners.remove(_IGNORE_JSON)
 
-    cleaners_dir = 'cleaners'
+    with open(join(_CLEANERS_DIR, _IGNORE_JSON)) as f:
+        data = json.load(f)
 
-    for cleaner in listdir(cleaners_dir):
-        with open(join(cleaners_dir, cleaner)) as f:
+        for ignore in data['Ignore']:
+            if ".json" not in ignore:
+                ignore = ignore + ".json"
+            cleaners.remove(ignore)
+
+    return cleaners
+
+
+if __name__ == '__main__':
+
+    cleaners = listdir(_CLEANERS_DIR)
+    cleaners = remove_ignored_cleaners(cleaners)
+
+    for cleaner in cleaners:
+        with open(join(_CLEANERS_DIR, cleaner)) as f:
             data = json.load(f)
             if is_valid_json(data):
                 do_clean(data)
