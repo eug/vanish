@@ -1,0 +1,21 @@
+{
+  "Apt" : {
+    "Term logs" : {
+      "active": true,
+      "path"  : "/var/log/apt/term.log",
+      "description": "Delete the log file"
+    },
+
+    "Preload logs" : {
+      "active": true,
+      "path"  : "/var/log/apt/preload.log",
+      "description": "Delete the log file"
+    },
+
+    "Casper logs" : {
+      "active": true,
+      "path"  : "/var/log/apt/installer/casper.log",
+      "description": "Delete the log file"
+    }
+  }
+}

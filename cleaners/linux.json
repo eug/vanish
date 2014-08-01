@@ -1,5 +1,11 @@
 {
   "Linux" : {
+    "Xorg log files" : {
+      "active": true,
+      "path"  : "/var/log/Xorg.*.log*",
+      "description": "Delete the log files"
+    },
+
     "Temporary files" : {
       "active": false,
       "path"  : "/tmp",

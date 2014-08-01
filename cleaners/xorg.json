@@ -1,0 +1,8 @@
+{
+  "Xorg" : {
+    "Log files" : {
+      "active": true,
+      "path"  : "/var/log/Xorg.*.log*",
+      "description": "Delete the log files"
+    }
+}
