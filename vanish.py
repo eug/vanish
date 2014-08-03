@@ -3,14 +3,18 @@
 
 import json
 import logging
-from shutil import rmtree
 from glob import glob
+from shutil import rmtree
 from os import remove, listdir
 from os.path import isfile, join, expandvars, expanduser
 
 
 _IGNORE_JSON = 'ignore.json'
 _CLEANERS_DIR = 'cleaners'
+
+
+def expand(path):
+    return expandvars(expanduser(path))
 
 
 def is_valid_json(json):
@@ -37,10 +41,6 @@ def is_valid_json(json):
                 print("[WARNING] Missing 'description' attribute for '" + name + "'")
 
     return isvalid
-
-
-def expand(path):
-    return expandvars(expanduser(path))
 
 
 def rm_content(path):
@@ -80,27 +80,24 @@ def do_clean(json):
             for path in paths:
                 for f in glob(path):
                     print("Removing '" + f + "'")
-                    rm_content(f)
+                    #rm_content(f)
 
 
-def remove_ignored_cleaners(cleaners):
-    cleaners.remove(_IGNORE_JSON)
+def get_cleaners_set():
+    return set(listdir(_CLEANERS_DIR))
 
+
+def get_ignore_set():
+    ignore = []
     with open(join(_CLEANERS_DIR, _IGNORE_JSON)) as f:
         data = json.load(f)
-
-        for ignore in data['Ignore']:
-            if ".json" not in ignore:
-                ignore = ignore + ".json"
-            cleaners.remove(ignore)
-
-    return cleaners
+        ignore = data['Ignore']
+    return set(ignore)
 
 
 if __name__ == '__main__':
 
-    cleaners = listdir(_CLEANERS_DIR)
-    cleaners = remove_ignored_cleaners(cleaners)
+    cleaners = get_cleaners_set() - get_ignore_set()
 
     for cleaner in cleaners:
         with open(join(_CLEANERS_DIR, cleaner)) as f:
