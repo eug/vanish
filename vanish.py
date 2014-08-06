@@ -6,7 +6,7 @@ import logging
 from glob import glob
 from shutil import rmtree
 from os import remove, listdir, access
-from os.path import isfile, join, expandvars, expanduser, dirname, realpath
+from os.path import isfile, join, exists, expandvars, expanduser, dirname, realpath
 
 
 logging.basicConfig(format='%(levelname)s:%(name)s: %(message)s')
